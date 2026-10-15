@@ -1,0 +1,2213 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KOENIGSEGG | The Art of Speed</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --negro:#050505;
+    --negro2:#0c0c0c;
+    --gris:#151515;
+    --dorado:#c9a227;
+    --dorado-claro:#f1d77a;
+    --blanco:#f5f5f5;
+    --gris-texto:#b8b8b8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--negro);
+    color:var(--blanco);
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================
+   BARRA DE NAVEGACIÓN
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(5,5,5,.92);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(201,162,39,.25);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 6%;
+}
+
+.logo{
+    font-family:'Cinzel',serif;
+    color:var(--dorado);
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:5px;
+}
+
+nav ul{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+nav a{
+    color:#ddd;
+    text-decoration:none;
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--dorado);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at center,rgba(201,162,39,.12),transparent 35%),
+        linear-gradient(120deg,#020202,#101010,#020202);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:650px;
+    height:650px;
+    border:1px solid rgba(201,162,39,.2);
+    border-radius:50%;
+    animation:rotate 25s linear infinite;
+}
+
+@keyframes rotate{
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:1000px;
+    padding:40px;
+}
+
+.eyebrow{
+    color:var(--dorado);
+    letter-spacing:8px;
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-family:'Cinzel',serif;
+    font-size:clamp(55px,10vw,130px);
+    letter-spacing:15px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:var(--dorado);
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#aaa;
+    line-height:1.8;
+    font-size:16px;
+}
+
+.hero-buttons{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 28px;
+    border:1px solid var(--dorado);
+    color:var(--dorado);
+    text-decoration:none;
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    transition:.3s;
+    cursor:pointer;
+    background:transparent;
+}
+
+.btn:hover{
+    background:var(--dorado);
+    color:#000;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+section{
+    padding:110px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title small{
+    color:var(--dorado);
+    letter-spacing:5px;
+}
+
+.section-title h2{
+    font-family:'Cinzel',serif;
+    font-size:42px;
+    margin-top:15px;
+}
+
+.section-title p{
+    max-width:700px;
+    margin:20px auto 0;
+    color:var(--gris-texto);
+    line-height:1.8;
+}
+
+/* =========================
+   HISTORIA
+========================= */
+
+.history{
+    background:#080808;
+}
+
+.history-content{
+    max-width:1100px;
+    margin:auto;
+}
+
+.history-text{
+    border-left:2px solid var(--dorado);
+    padding-left:35px;
+    margin-bottom:60px;
+}
+
+.history-text h3{
+    color:var(--dorado);
+    font-family:'Cinzel',serif;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.history-text p{
+    color:#bbb;
+    line-height:1.9;
+}
+
+.timeline{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.timeline-card{
+    background:#111;
+    padding:30px 20px;
+    border:1px solid #222;
+    transition:.4s;
+}
+
+.timeline-card:hover{
+    transform:translateY(-8px);
+    border-color:var(--dorado);
+}
+
+.timeline-card .year{
+    color:var(--dorado);
+    font-family:'Cinzel',serif;
+    font-size:32px;
+}
+
+.timeline-card h4{
+    margin:15px 0;
+}
+
+.timeline-card p{
+    color:#999;
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* =========================
+   CARRUSEL
+========================= */
+
+.carousel-section{
+    background:#030303;
+}
+
+.carousel{
+    max-width:1100px;
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+    border:1px solid #292929;
+    box-shadow:0 20px 80px rgba(0,0,0,.7);
+}
+
+.slides{
+    display:flex;
+    transition:transform .7s cubic-bezier(.77,0,.18,1);
+}
+
+.slide{
+    min-width:100%;
+    height:520px;
+    position:relative;
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:flex-end;
+}
+
+.slide::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent 20%,rgba(0,0,0,.95));
+}
+
+.slide-content{
+    position:relative;
+    z-index:2;
+    padding:50px;
+    max-width:700px;
+}
+
+.slide-content small{
+    color:var(--dorado);
+    letter-spacing:4px;
+}
+
+.slide-content h3{
+    font-family:'Cinzel',serif;
+    font-size:42px;
+    margin:10px 0;
+}
+
+.slide-content p{
+    color:#ccc;
+    line-height:1.7;
+}
+
+.carousel-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:5;
+    background:rgba(0,0,0,.7);
+    border:1px solid var(--dorado);
+    color:var(--dorado);
+    width:50px;
+    height:50px;
+    cursor:pointer;
+    font-size:22px;
+}
+
+.prev{left:20px}
+.next{right:20px}
+
+.dots{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:20px;
+}
+
+.dot{
+    width:35px;
+    height:3px;
+    background:#333;
+    cursor:pointer;
+}
+
+.dot.active{
+    background:var(--dorado);
+}
+
+/* =========================
+   MODELOS
+========================= */
+
+.models{
+    background:#090909;
+}
+
+.models-container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.search-box{
+    display:flex;
+    max-width:600px;
+    margin:0 auto 45px;
+}
+
+.search-box input{
+    width:100%;
+    background:#111;
+    border:1px solid #333;
+    color:white;
+    padding:17px;
+    outline:none;
+}
+
+.search-box button{
+    background:var(--dorado);
+    border:none;
+    padding:0 25px;
+    cursor:pointer;
+}
+
+/* ACCORDION */
+
+.accordion{
+    border-top:1px solid #333;
+}
+
+.model{
+    border-bottom:1px solid #333;
+}
+
+.model-header{
+    display:grid;
+    grid-template-columns:90px 1fr 80px;
+    align-items:center;
+    padding:22px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.model-header:hover{
+    background:#111;
+}
+
+.model-number{
+    color:var(--dorado);
+    font-family:'Cinzel',serif;
+}
+
+.model-name{
+    font-family:'Cinzel',serif;
+    font-size:23px;
+}
+
+.model-year{
+    color:#777;
+    text-align:right;
+}
+
+.model-content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .5s ease;
+    background:#0d0d0d;
+}
+
+.model-inner{
+    display:grid;
+    grid-template-columns:45% 55%;
+}
+
+.model-inner img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+}
+
+.model-info{
+    padding:35px;
+}
+
+.model-info h4{
+    color:var(--dorado);
+    font-family:'Cinzel',serif;
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.model-info p{
+    color:#aaa;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.specs{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.spec{
+    background:#151515;
+    padding:15px;
+}
+
+.spec strong{
+    display:block;
+    color:var(--dorado);
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+.spec span{
+    display:block;
+    margin-top:6px;
+    font-size:14px;
+}
+
+/* =========================
+   TECNOLOGÍA
+========================= */
+
+.tech{
+    background:
+        linear-gradient(rgba(0,0,0,.88),rgba(0,0,0,.95)),
+        radial-gradient(circle at 80% 30%,#382d0b,transparent 35%);
+}
+
+.tech-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.tech-card{
+    border:1px solid #292929;
+    padding:35px;
+    background:rgba(10,10,10,.8);
+    transition:.4s;
+}
+
+.tech-card:hover{
+    border-color:var(--dorado);
+    transform:translateY(-7px);
+}
+
+.tech-icon{
+    color:var(--dorado);
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+.tech-card h3{
+    font-family:'Cinzel',serif;
+    margin-bottom:15px;
+}
+
+.tech-card p{
+    color:#999;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* =========================
+   INTERACCIÓN
+========================= */
+
+.interactive{
+    text-align:center;
+    background:#050505;
+}
+
+.interactive-box{
+    max-width:850px;
+    margin:auto;
+    border:1px solid #292929;
+    padding:60px 30px;
+    background:linear-gradient(145deg,#111,#070707);
+}
+
+.interactive-box h3{
+    font-family:'Cinzel',serif;
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.interactive-box p{
+    color:#999;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+#fact{
+    margin-top:30px;
+    color:var(--dorado);
+    font-size:18px;
+    min-height:30px;
+}
+
+/* =========================
+   ESTADÍSTICAS
+========================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.stat{
+    text-align:center;
+    padding:35px 15px;
+    border-top:1px solid var(--dorado);
+    background:#0d0d0d;
+}
+
+.stat-number{
+    font-family:'Cinzel',serif;
+    color:var(--dorado);
+    font-size:35px;
+}
+
+.stat p{
+    color:#888;
+    margin-top:10px;
+    font-size:12px;
+    letter-spacing:1px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:1px solid #222;
+    padding:60px 8%;
+    background:#020202;
+    text-align:center;
+}
+
+footer .logo{
+    margin-bottom:20px;
+}
+
+footer p{
+    color:#666;
+    font-size:12px;
+    line-height:1.7;
+}
+
+.footer-links{
+    margin-top:25px;
+}
+
+.footer-links a{
+    color:var(--dorado);
+    text-decoration:none;
+    margin:0 10px;
+    font-size:12px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+    nav ul{
+        display:none;
+    }
+
+    .timeline,
+    .tech-grid,
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .model-inner{
+        grid-template-columns:1fr;
+    }
+
+    .model-inner img{
+        height:280px;
+    }
+
+}
+
+@media(max-width:550px){
+
+    section{
+        padding:80px 5%;
+    }
+
+    .timeline,
+    .tech-grid,
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        letter-spacing:6px;
+    }
+
+    .slide{
+        height:450px;
+    }
+
+    .slide-content{
+        padding:30px;
+    }
+
+    .slide-content h3{
+        font-size:30px;
+    }
+
+    .model-header{
+        grid-template-columns:45px 1fr 50px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVEGACIÓN
+========================= -->
+
+<nav>
+
+<div class="logo">KOENIGSEGG</div>
+
+<ul>
+<li><a href="#historia">Historia</a></li>
+<li><a href="#modelos">Modelos</a></li>
+<li><a href="#tecnologia">Tecnología</a></li>
+<li><a href="#interactivo">Explorar</a></li>
+</ul>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+<div class="hero-content">
+
+<div class="eyebrow">SWEDISH AUTOMOTIVE ENGINEERING</div>
+
+<h1>KOENIG<span>SEGG</span></h1>
+
+<p>
+Una historia construida alrededor de una idea aparentemente imposible:
+crear automóviles capaces de llevar la ingeniería, el diseño y el rendimiento
+más allá de los límites convencionales.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#historia" class="btn">Descubrir la historia</a>
+
+<a href="#modelos" class="btn">Explorar modelos</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     HISTORIA
+========================= -->
+
+<section id="historia" class="history">
+
+<div class="section-title">
+
+<small>THE BEGINNING</small>
+
+<h2>Una idea que desafió a la industria</h2>
+
+<p>
+Koenigsegg nació de una visión personal y terminó convirtiéndose en uno de los
+nombres más reconocidos de la ingeniería automotriz de alto rendimiento.
+</p>
+
+</div>
+
+
+<div class="history-content">
+
+<div class="history-text">
+
+<h3>El sueño de Christian von Koenigsegg</h3>
+
+<p>
+En 1994, Christian von Koenigsegg tenía solamente 22 años cuando decidió
+seguir una idea que parecía poco realista: crear su propio automóvil deportivo.
+Sin una larga tradición industrial detrás, la compañía comenzó prácticamente
+desde cero. La filosofía era sencilla, aunque extremadamente ambiciosa:
+no aceptar los límites establecidos por la industria.
+</p>
+
+<br>
+
+<p>
+El prototipo CC comenzó a tomar forma durante los años siguientes y finalmente
+fue presentado públicamente en 1996. Después llegaron el CC8S, el CCR, el CCX
+y posteriormente la familia Agera, modelos que fueron construyendo una identidad
+basada en el uso intensivo de fibra de carbono, motores de altas prestaciones
+y soluciones desarrolladas internamente.
+</p>
+
+<br>
+
+<p>
+Con el paso del tiempo, Koenigsegg dejó de limitarse a fabricar automóviles
+extremadamente rápidos. La empresa comenzó a desarrollar sus propias soluciones
+de transmisión, aerodinámica, motores, componentes de fibra de carbono y
+sistemas híbridos.
+</p>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="timeline-card">
+
+<div class="year">1994</div>
+
+<h4>El nacimiento</h4>
+
+<p>
+Christian von Koenigsegg funda Koenigsegg Automotive con la intención de crear
+un automóvil deportivo sin compromisos.
+</p>
+
+</div>
+
+
+<div class="timeline-card">
+
+<div class="year">2002</div>
+
+<h4>CC8S</h4>
+
+<p>
+El CC8S entra en producción y establece las bases del lenguaje de diseño y
+la filosofía técnica que caracterizarían a la marca.
+</p>
+
+</div>
+
+
+<div class="timeline-card">
+
+<div class="year">2014</div>
+
+<h4>One:1</h4>
+
+<p>
+La compañía presenta un automóvil con una relación de potencia-peso de
+1:1: 1,360 hp y 1,360 kg.
+</p>
+
+</div>
+
+
+<div class="timeline-card">
+
+<div class="year">2017</div>
+
+<h4>Agera RS</h4>
+
+<p>
+El Agera RS alcanza un promedio de 446.97 km/h en dos pasadas y establece
+un importante récord de velocidad para un vehículo de producción homologado.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CARRUSEL
+========================= -->
+
+<section class="carousel-section">
+
+<div class="section-title">
+
+<small>ICONIC MACHINES</small>
+
+<h2>Una evolución constante</h2>
+
+<p>
+Cada generación representa una interpretación diferente de la misma filosofía:
+más rendimiento, menos compromisos.
+</p>
+
+</div>
+
+
+<div class="carousel">
+
+<div class="slides" id="slides">
+
+<div class="slide"
+style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg%20Agera%20RS.JPG')">
+
+<div class="slide-content">
+
+<small>2015 — 2018</small>
+
+<h3>AGERA RS</h3>
+
+<p>
+Una combinación de prestaciones extremas y homologación para carretera.
+Fue construido en solamente 25 ejemplares.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="slide"
+style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg%20Regera.jpg')">
+
+<div class="slide-content">
+
+<small>2015 — 2022</small>
+
+<h3>REGERA</h3>
+
+<p>
+Un concepto diferente de megacar híbrido que utiliza el sistema Koenigsegg
+Direct Drive en lugar de una transmisión convencional de múltiples marchas.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="slide"
+style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg%20Jesko.jpg')">
+
+<div class="slide-content">
+
+<small>2019 — PRESENTE</small>
+
+<h3>JESKO</h3>
+
+<p>
+Diseñado como sucesor del Agera RS, combina un V8 biturbo de 5.0 litros,
+aerodinámica avanzada y la transmisión Light Speed Transmission.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="slide"
+style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg%20Gemera%20%282022%29%20%2852571939473%29.jpg')">
+
+<div class="slide-content">
+
+<small>2020 — PRESENTE</small>
+
+<h3>GEMERA</h3>
+
+<p>
+El primer cuatro plazas de Koenigsegg y una reinterpretación del concepto
+de automóvil de alto rendimiento para cuatro pasajeros.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<button class="carousel-btn prev" onclick="moveSlide(-1)">‹</button>
+
+<button class="carousel-btn next" onclick="moveSlide(1)">›</button>
+
+</div>
+
+
+<div class="dots">
+
+<div class="dot active" onclick="goToSlide(0)"></div>
+<div class="dot" onclick="goToSlide(1)"></div>
+<div class="dot" onclick="goToSlide(2)"></div>
+<div class="dot" onclick="goToSlide(3)"></div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MODELOS
+========================= -->
+
+<section id="modelos" class="models">
+
+<div class="section-title">
+
+<small>THE COLLECTION</small>
+
+<h2>Modelos que hicieron historia</h2>
+
+<p>
+Abre cada modelo para conocer su historia, filosofía y algunas de sus
+características más importantes.
+</p>
+
+</div>
+
+
+<div class="models-container">
+
+
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="Buscar un modelo..."
+onkeyup="searchModels()">
+
+<button>⌕</button>
+
+</div>
+
+
+<div class="accordion">
+
+
+<!-- CC8S -->
+
+<div class="model">
+
+<div class="model-header" onclick="toggleModel(this)">
+
+<div class="model-number">01</div>
+
+<div class="model-name">CC8S</div>
+
+<div class="model-year">2002</div>
+
+</div>
+
+<div class="model-content">
+
+<div class="model-inner">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg%20CC8S.jpg"
+alt="Koenigsegg CC8S"
+onerror="this.src='https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80'">
+
+<div class="model-info">
+
+<h4>El comienzo de una era</h4>
+
+<p>
+El CC8S representa uno de los capítulos fundamentales de la historia de
+Koenigsegg. Su diseño minimalista y su arquitectura establecieron las bases
+de muchos de los modelos posteriores de la compañía.
+</p>
+
+<div class="specs">
+
+<div class="spec">
+<strong>PRODUCCIÓN</strong>
+<span>6 unidades</span>
+</div>
+
+<div class="spec">
+<strong>MOTOR</strong>
+<span>V8 sobrealimentado</span>
+</div>
+
+<div class="spec">
+<strong>POTENCIA</strong>
+<span>655 hp</span>
+</div>
+
+<div class="spec">
+<strong>FILOSOFÍA</strong>
+<span>Ligereza + potencia</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CCR -->
+
+<div class="model">
+
+<div class="model-header" onclick="toggleModel(this)">
+
+<div class="model-number">02</div>
+
+<div class="model-name">CCR</div>
+
+<div class="model-year">2004</div>
+
+</div>
+
+<div class="model-content">
+
+<div class="model-inner">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg%20CCR.jpg"
+alt="Koenigsegg CCR"
+onerror="this.src='https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1200&q=80'">
+
+<div class="model-info">
+
+<h4>Más allá del CC8S</h4>
+
+<p>
+El CCR evolucionó la fórmula original con una carrocería revisada,
+aerodinámica mejorada, frenos más grandes y un motor V8 con doble
+sobrealimentación.
+</p>
+
+<div class="specs">
+
+<div class="spec">
+<strong>POTENCIA</strong>
+<span>806 hp</span>
+</div>
+
+<div class="spec">
+<strong>PRODUCCIÓN</strong>
+<span>14 unidades</span>
+</div>
+
+<div class="spec">
+<strong>MOTOR</strong>
+<span>V8 Twin-Supercharged</span>
+</div>
+
+<div class="spec">
+<strong>PERIODO</strong>
+<span>2004–2006</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CCX -->
+
+<div class="model">
+
+<div class="model-header" onclick="toggleModel(this)">
+
+<div class="model-number">03</div>
+
+<div class="model-name">CCX</div>
+
+<div class="model-year">2006</div>
+
+</div>
+
+<div class="model-content">
+
+<div class="model-inner">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg%20CCX.jpg"
+alt="Koenigsegg CCX"
+onerror="this.src='https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80'">
+
+<div class="model-info">
+
+<h4>La expansión internacional</h4>
+
+<p>
+El CCX fue desarrollado pensando en los requisitos internacionales y
+representó un paso importante para que Koenigsegg pudiera introducirse
+en nuevos mercados.
+</p>
+
+<div class="specs">
+
+<div class="spec">
+<strong>MOTOR</strong>
+<span>V8 Twin-Supercharged</span>
+</div>
+
+<div class="spec">
+<strong>CARÁCTER</strong>
+<span>Hypercar</span>
+</div>
+
+<div class="spec">
+<strong>DESARROLLO</strong>
+<span>Homologación global</span>
+</div>
+
+<div class="spec">
+<strong>FILOSOFÍA</strong>
+<span>Rendimiento extremo</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- AGERA -->
+
+<div class="model">
+
+<div class="model-header" onclick="toggleModel(this)">
+
+<div class="model-number">04</div>
+
+<div class="model-name">AGERA</div>
+
+<div class="model-year">2010</div>
+
+</div>
+
+<div class="model-content">
+
+<div class="model-inner">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg%20Agera.jpg"
+alt="Koenigsegg Agera"
+onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80'">
+
+<div class="model-info">
+
+<h4>Tomar acción</h4>
+
+<p>
+Agera significa “tomar acción” en sueco. El modelo marcó una nueva etapa
+para Koenigsegg al incorporar un motor V8 biturbo, nuevos sistemas
+electrónicos y una evolución profunda del diseño.
+</p>
+
+<div class="specs">
+
+<div class="spec">
+<strong>POTENCIA</strong>
+<span>960 hp iniciales</span>
+</div>
+
+<div class="spec">
+<strong>TORQUE</strong>
+<span>Más de 1,100 Nm</span>
+</div>
+
+<div class="spec">
+<strong>MOTOR</strong>
+<span>V8 Twin-Turbo</span>
+</div>
+
+<div class="spec">
+<strong>ESTRENO</strong>
+<span>Ginebra 2010</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- AGERA R -->
+
+<div class="model">
+
+<div class="model-header" onclick="toggleModel(this)">
+
+<div class="model-number">05</div>
+
+<div class="model-name">AGERA R</div>
+
+<div class="model-year">2011</div>
+
+</div>
+
+<div class="model-content">
+
+<div class="model-inner">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg-Agera-RSR.jpg"
+alt="Koenigsegg Agera R">
+
+<div class="model-info">
+
+<h4>Potencia y flexibilidad</h4>
+
+<p>
+El Agera R continuó el desarrollo de la filosofía Agera incorporando
+tecnología de combustible flexible. Podía funcionar con diferentes
+combustibles, incluyendo mezclas con etanol.
+</p>
+
+<div class="specs">
+
+<div class="spec">
+<strong>POTENCIA</strong>
+<span>1,140 hp con E85/E100</span>
+</div>
+
+<div class="spec">
+<strong>TORQUE</strong>
+<span>1,200 Nm</span>
+</div>
+
+<div class="spec">
+<strong>PRODUCCIÓN</strong>
+<span>18 unidades</span>
+</div>
+
+<div class="spec">
+<strong>TECNOLOGÍA</strong>
+<span>Flex-Fuel</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ONE:1 -->
+
+<div class="model">
+
+<div class="model-header" onclick="toggleModel(this)">
+
+<div class="model-number">06</div>
+
+<div class="model-name">ONE:1</div>
+
+<div class="model-year">2014</div>
+
+</div>
+
+<div class="model-content">
+
+<div class="model-inner">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg%20One1.jpg"
+alt="Koenigsegg One:1"
+onerror="this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80'">
+
+<div class="model-info">
+
+<h4>La proporción perfecta</h4>
+
+<p>
+El nombre One:1 hace referencia a una relación de potencia-peso de
+aproximadamente 1:1. Con 1,360 hp y 1,360 kg, el automóvil fue concebido
+como una máquina extremadamente enfocada al rendimiento.
+</p>
+
+<div class="specs">
+
+<div class="spec">
+<strong>POTENCIA</strong>
+<span>1,360 hp</span>
+</div>
+
+<div class="spec">
+<strong>PESO</strong>
+<span>1,360 kg</span>
+</div>
+
+<div class="spec">
+<strong>RELACIÓN</strong>
+<span>1:1</span>
+</div>
+
+<div class="spec">
+<strong>UNIDADES</strong>
+<span>6 clientes + 1 desarrollo</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- REGERA -->
+
+<div class="model">
+
+<div class="model-header" onclick="toggleModel(this)">
+
+<div class="model-number">07</div>
+
+<div class="model-name">REGERA</div>
+
+<div class="model-year">2015</div>
+
+</div>
+
+<div class="model-content">
+
+<div class="model-inner">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg%20Regera.jpg"
+alt="Koenigsegg Regera">
+
+<div class="model-info">
+
+<h4>Una nueva interpretación del híbrido</h4>
+
+<p>
+El Regera combina un V8 biturbo con tres motores eléctricos y un sistema
+Koenigsegg Direct Drive. En lugar de utilizar una caja de cambios
+convencional de múltiples relaciones, la transmisión entrega la potencia
+de una manera completamente diferente.
+</p>
+
+<div class="specs">
+
+<div class="spec">
+<strong>POTENCIA</strong>
+<span>Más de 1,500 hp</span>
+</div>
+
+<div class="spec">
+<strong>SISTEMA</strong>
+<span>Híbrido</span>
+</div>
+
+<div class="spec">
+<strong>TRANSMISIÓN</strong>
+<span>Direct Drive</span>
+</div>
+
+<div class="spec">
+<strong>PRODUCCIÓN</strong>
+<span>80 unidades</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- AGERA RS -->
+
+<div class="model">
+
+<div class="model-header" onclick="toggleModel(this)">
+
+<div class="model-number">08</div>
+
+<div class="model-name">AGERA RS</div>
+
+<div class="model-year">2015</div>
+
+</div>
+
+<div class="model-content">
+
+<div class="model-inner">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg%20Agera%20RS.JPG"
+alt="Koenigsegg Agera RS">
+
+<div class="model-info">
+
+<h4>El récord</h4>
+
+<p>
+El Agera RS llevó la tecnología desarrollada por Koenigsegg a un nivel
+extraordinario. En noviembre de 2017 registró un promedio de 446.97 km/h
+en dos pasadas en una carretera pública de Nevada.
+</p>
+
+<div class="specs">
+
+<div class="spec">
+<strong>POTENCIA</strong>
+<span>1,160 hp iniciales</span>
+</div>
+
+<div class="spec">
+<strong>PRODUCCIÓN</strong>
+<span>25 unidades</span>
+</div>
+
+<div class="spec">
+<strong>RÉCORD</strong>
+<span>446.97 km/h</span>
+</div>
+
+<div class="spec">
+<strong>PERIODO</strong>
+<span>2015–2018</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- JESKO -->
+
+<div class="model">
+
+<div class="model-header" onclick="toggleModel(this)">
+
+<div class="model-number">09</div>
+
+<div class="model-name">JESKO</div>
+
+<div class="model-year">2019</div>
+
+</div>
+
+<div class="model-content">
+
+<div class="model-inner">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg%20Jesko.jpg"
+alt="Koenigsegg Jesko">
+
+<div class="model-info">
+
+<h4>La nueva generación</h4>
+
+<p>
+Presentado en 2019, el Jesko fue desarrollado como sucesor del Agera RS.
+Su arquitectura está orientada a ofrecer un nivel extremadamente alto
+de rendimiento en carretera y pista.
+</p>
+
+<div class="specs">
+
+<div class="spec">
+<strong>MOTOR</strong>
+<span>5.0 L V8 Twin-Turbo</span>
+</div>
+
+<div class="spec">
+<strong>POTENCIA</strong>
+<span>Hasta 1,600 hp con E85</span>
+</div>
+
+<div class="spec">
+<strong>TRANSMISIÓN</strong>
+<span>9 velocidades LST</span>
+</div>
+
+<div class="spec">
+<strong>AERODINÁMICA</strong>
+<span>Hasta 1,400 kg de downforce</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- GEMERA -->
+
+<div class="model">
+
+<div class="model-header" onclick="toggleModel(this)">
+
+<div class="model-number">10</div>
+
+<div class="model-name">GEMERA</div>
+
+<div class="model-year">2020</div>
+
+</div>
+
+<div class="model-content">
+
+<div class="model-inner">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg%20Gemera%20%282022%29%20%2852571939473%29.jpg"
+alt="Koenigsegg Gemera">
+
+<div class="model-info">
+
+<h4>El Mega-GT</h4>
+
+<p>
+El Gemera representa una de las ideas más diferentes de Koenigsegg:
+un automóvil capaz de combinar el concepto de megacar con cuatro plazas
+y espacio para pasajeros y equipaje.
+</p>
+
+<div class="specs">
+
+<div class="spec">
+<strong>PLAZAS</strong>
+<span>4</span>
+</div>
+
+<div class="spec">
+<strong>PRODUCCIÓN</strong>
+<span>300 unidades</span>
+</div>
+
+<div class="spec">
+<strong>CATEGORÍA</strong>
+<span>Mega-GT</span>
+</div>
+
+<div class="spec">
+<strong>TRACCIÓN</strong>
+<span>AWD</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CC850 -->
+
+<div class="model">
+
+<div class="model-header" onclick="toggleModel(this)">
+
+<div class="model-number">11</div>
+
+<div class="model-name">CC850</div>
+
+<div class="model-year">2022</div>
+
+</div>
+
+<div class="model-content">
+
+<div class="model-inner">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg%20CC850.jpg"
+alt="Koenigsegg CC850"
+onerror="this.src='https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1200&q=80'">
+
+<div class="model-info">
+
+<h4>El regreso de una leyenda</h4>
+
+<p>
+El CC850 fue creado como una reinterpretación moderna del CC8S. Su
+característica más llamativa es el Engage Shift System, que permite
+combinar una experiencia manual de seis velocidades con el funcionamiento
+de una transmisión automática de nueve velocidades.
+</p>
+
+<div class="specs">
+
+<div class="spec">
+<strong>POTENCIA</strong>
+<span>1,385 hp con E85</span>
+</div>
+
+<div class="spec">
+<strong>PESO</strong>
+<span>1,385 kg</span>
+</div>
+
+<div class="spec">
+<strong>RELACIÓN</strong>
+<span>1:1</span>
+</div>
+
+<div class="spec">
+<strong>PRODUCCIÓN</strong>
+<span>70 unidades</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TECNOLOGÍA
+========================= -->
+
+<section id="tecnologia" class="tech">
+
+<div class="section-title">
+
+<small>ENGINEERING</small>
+
+<h2>La obsesión por la ingeniería</h2>
+
+<p>
+Para Koenigsegg, la velocidad es solamente una consecuencia de una filosofía
+centrada en reducir peso, aumentar eficiencia y desarrollar tecnología propia.
+</p>
+
+</div>
+
+
+<div class="tech-grid">
+
+<div class="tech-card">
+
+<div class="tech-icon">◆</div>
+
+<h3>Fibra de carbono</h3>
+
+<p>
+La compañía desarrolla y fabrica internamente diversos componentes de
+fibra de carbono, buscando reducir masa y aumentar rigidez estructural.
+</p>
+
+</div>
+
+
+<div class="tech-card">
+
+<div class="tech-icon">◇</div>
+
+<h3>Aerodinámica</h3>
+
+<p>
+Alerones activos, túneles Venturi, elementos móviles y diferentes soluciones
+aerodinámicas permiten adaptar el automóvil a distintas condiciones.
+</p>
+
+</div>
+
+
+<div class="tech-card">
+
+<div class="tech-icon">◈</div>
+
+<h3>Powertrain</h3>
+
+<p>
+Koenigsegg desarrolla motores, sistemas híbridos y soluciones de transmisión
+orientadas a maximizar la relación entre potencia, peso y eficiencia.
+</p>
+
+</div>
+
+
+<div class="tech-card">
+
+<div class="tech-icon">⬡</div>
+
+<h3>Light Speed Transmission</h3>
+
+<p>
+La transmisión de nueve velocidades desarrollada por Koenigsegg busca realizar
+cambios extremadamente rápidos utilizando una arquitectura compacta.
+</p>
+
+</div>
+
+
+<div class="tech-card">
+
+<div class="tech-icon">◎</div>
+
+<h3>Direct Drive</h3>
+
+<p>
+El sistema del Regera elimina la necesidad de una caja de cambios convencional
+de múltiples velocidades para su sistema de propulsión.
+</p>
+
+</div>
+
+
+<div class="tech-card">
+
+<div class="tech-icon">✦</div>
+
+<h3>Innovación interna</h3>
+
+<p>
+La marca ha desarrollado numerosas tecnologías internamente, incluyendo
+soluciones relacionadas con motores, fibra de carbono, combustión,
+aerodinámica y sistemas electrónicos.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ESTADÍSTICAS
+========================= -->
+
+<section>
+
+<div class="section-title">
+
+<small>NUMBERS</small>
+
+<h2>Koenigsegg en cifras</h2>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+
+<div class="stat-number">1994</div>
+
+<p>AÑO DE FUNDACIÓN</p>
+
+</div>
+
+<div class="stat">
+
+<div class="stat-number">446.97</div>
+
+<p>KM/H — AGERA RS</p>
+
+</div>
+
+<div class="stat">
+
+<div class="stat-number">1:1</div>
+
+<p>RELACIÓN ONE:1</p>
+
+</div>
+
+<div class="stat">
+
+<div class="stat-number">300</div>
+
+<p>GEMERA — PRODUCCIÓN PLANIFICADA</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     INTERACCIÓN
+========================= -->
+
+<section id="interactivo" class="interactive">
+
+<div class="section-title">
+
+<small>INTERACTIVE EXPERIENCE</small>
+
+<h2>¿Cuánto conoces a Koenigsegg?</h2>
+
+</div>
+
+
+<div class="interactive-box">
+
+<h3>Dato aleatorio</h3>
+
+<p>
+Presiona el botón para descubrir un dato diferente sobre la historia
+y tecnología de Koenigsegg.
+</p>
+
+<button class="btn" onclick="randomFact()">
+Mostrar información
+</button>
+
+<div id="fact"></div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="logo">KOENIGSEGG</div>
+
+<p>
+The pursuit of perfection through engineering.
+</p>
+
+<div class="footer-links">
+
+<a href="#historia">Historia</a>
+
+<a href="#modelos">Modelos</a>
+
+<a href="#tecnologia">Tecnología</a>
+
+</div>
+
+<p style="margin-top:30px;">
+Página educativa no oficial. Koenigsegg® y sus modelos son marcas
+de sus respectivos propietarios.
+</p>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   CARRUSEL
+========================= */
+
+let currentSlide = 0;
+
+const slides = document.getElementById("slides");
+
+const dots = document.querySelectorAll(".dot");
+
+function updateCarousel(){
+
+    slides.style.transform =
+    `translateX(-${currentSlide * 100}%)`;
+
+    dots.forEach((dot,index)=>{
+
+        dot.classList.toggle(
+            "active",
+            index === currentSlide
+        );
+
+    });
+
+}
+
+function moveSlide(direction){
+
+    currentSlide += direction;
+
+    if(currentSlide < 0){
+        currentSlide = 3;
+    }
+
+    if(currentSlide > 3){
+        currentSlide = 0;
+    }
+
+    updateCarousel();
+
+}
+
+function goToSlide(index){
+
+    currentSlide = index;
+
+    updateCarousel();
+
+}
+
+/* Cambio automático */
+
+setInterval(()=>{
+
+    moveSlide(1);
+
+},7000);
+
+
+/* =========================
+   ACCORDION
+========================= */
+
+function toggleModel(header){
+
+    const content =
+    header.nextElementSibling;
+
+    const allContents =
+    document.querySelectorAll(".model-content");
+
+    allContents.forEach(item=>{
+
+        if(item !== content){
+
+            item.style.maxHeight = null;
+
+        }
+
+    });
+
+    if(content.style.maxHeight){
+
+        content.style.maxHeight = null;
+
+    }else{
+
+        content.style.maxHeight =
+        content.scrollHeight + "px";
+
+    }
+
+}
+
+
+/* =========================
+   BUSCADOR
+========================= */
+
+function searchModels(){
+
+    const search =
+    document.getElementById("search")
+    .value
+    .toLowerCase();
+
+    const models =
+    document.querySelectorAll(".model");
+
+    models.forEach(model=>{
+
+        const text =
+        model.innerText.toLowerCase();
+
+        if(text.includes(search)){
+
+            model.style.display="block";
+
+        }else{
+
+            model.style.display="none";
+
+        }
+
+    });
+
+}
+
+
+/* =========================
+   DATOS ALEATORIOS
+========================= */
+
+const facts = [
+
+"Koenigsegg Automotive fue fundada el 12 de agosto de 1994 por Christian von Koenigsegg.",
+
+"El nombre Agera puede relacionarse con la idea de 'tomar acción'.",
+
+"El CC8S fue producido en solamente seis ejemplares.",
+
+"El Agera RS alcanzó un promedio de 446.97 km/h en sus dos pasadas de récord en Nevada.",
+
+"El One:1 utilizó 1,360 hp y 1,360 kg para alcanzar una relación de potencia-peso de 1:1.",
+
+"El Regera utiliza el sistema Koenigsegg Direct Drive.",
+
+"El Gemera fue presentado como el primer Mega-GT de cuatro plazas de Koenigsegg.",
+
+"El CC850 utiliza el Engage Shift System, capaz de ofrecer una experiencia manual y automática.",
+
+"Koenigsegg desarrolla internamente numerosas tecnologías relacionadas con sus vehículos.",
+
+"El Jesko utiliza un V8 biturbo de 5.0 litros.",
+
+"El Jesko puede producir hasta 1,600 hp utilizando E85 según la configuración indicada por Koenigsegg.",
+
+"El Agera RS fue producido en solamente 25 unidades."
+
+];
+
+
+function randomFact(){
+
+    const fact =
+    facts[Math.floor(Math.random()*facts.length)];
+
+    document.getElementById("fact").innerText =
+    fact;
+
+}
+
+
+/* =========================
+   ANIMACIÓN DE ESTADÍSTICAS
+========================= */
+
+const observer =
+new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity="1";
+            entry.target.style.transform="translateY(0)";
+
+        }
+
+    });
+
+},{
+    threshold:.2
+});
+
+
+document.querySelectorAll(
+    ".timeline-card,.tech-card,.stat"
+).forEach(card=>{
+
+    card.style.opacity="0";
+    card.style.transform="translateY(30px)";
+    card.style.transition="opacity .7s ease, transform .7s ease";
+
+    observer.observe(card);
+
+});
+
+</script>
+
+</body>
+</html>
+```
